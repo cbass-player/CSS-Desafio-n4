@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Music Evil Store</title>
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <script src="https://code.iconify.design/iconify-icon/1.0.7/iconify-icon.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <main class="grid-layout">
+        <navbar>
+            <h1>Rock Music Store</h1>
+            <section class="search">
+                <form class="search-box">
+                    <input type="text" placeholder="Busca lo que necesitas!">
+                    <button type="submit"><img src="assets/img/search.svg"></button>
+                </form>
+            </section>
+
+        </navbar>
+
+        <asidebar>
+            <h1 class="cat-title">
+                <iconify-icon icon="cryptocurrency:music" width="24" height="24"></iconify-icon>
+                RMS
+            </h1>
+
+            <h1 class="cat-title-mob">
+                <iconify-icon icon="cryptocurrency:music" width="24" height="24"></iconify-icon>
+                <span class="title-mob">Rock Music Store</span>
+            </h1>
+
+            <!-- Enlaces versión desktop -->
+            <nav class="enlaces">
+                <a href="#categorias" class="cat-elem">Categorías</a>
+                <a href="#destacados" class="cat-elem">Destacados</a>
+                <a href="#opiniones" class="cat-elem">Opiniones</a>
+                <a href="#escribenos" class="cat-elem">Escríbenos</a>
+                <a href="#siguenos" class="cat-elem">Síguenos</a>
+            </nav>
+
+            <!-- Menu hamburguesa version mobile -->
+            <div class="menu-ham">
+                <label for="menu-check" class="menu-label">
+                    <iconify-icon icon="material-symbols:menu"></iconify-icon>
+                </label>
+                <input type="checkbox" id="menu-check" class="menu-input">
+
+                <!-- Enlaces (Enlaces versión mobile) -->
+                <nav class="enlaces-mob">
+                    <a href="#categorias" class="cat-elem">Categorías</a>
+                    <a href="#destacados" class="cat-elem">Destacados</a>
+                    <a href="#opiniones" class="cat-elem">Opiniones</a>
+                    <a href="#escribenos" class="cat-elem">Escríbenos</a>
+                    <a href="#siguenos" class="cat-elem">Síguenos</a>
+                </nav>
+            </div>
+
+        </asidebar>
+
+        <section class="main">
+            <a name="categorias"></a>
+            <h2 class="category-title">Elige una de nuestras categorías, y comienza tu búsqueda!</h2>
+            <article class="categories">
+                <div class="img-cat">
+                    <img src="assets/img/cat-1-efectos.png" alt="Efecto"/>
+                    <h2>Efectos</h2>
+                </div>
+
+                <div class="img-cat">
+                    <img src="assets/img/cat-2-guitarras.png" alt="Guitarra"/>
+                    <h2>Guitarras</h2>
+                </div>
+
+                <div class="img-cat">
+                    <img src="assets/img/cat-3-bajos.png" alt="Bajo"/>
+                    <h2>Bajos</h2>
+                </div>
+
+                <div class="img-cat">
+                    <img src="assets/img/cat-4-amplificadores.png" alt="Amp"/>
+                    <h2>Amplificadores</h2>
+                </div>
+
+                <div class="img-cat">
+                    <img src="assets/img/cat-5-accesorios.png" alt="Accesorios"/>
+                    <h2>Accesorios</h2>
+                </div>
+
+                <div class="img-cat">
+                    <img src="assets/img/cat-6-audio.png" alt="Home"/>
+                    <h2>Home Studio</h2>
+                </div>
+            </article>
+
+            <article>
+                <a name="destacados"></a>
+                <h2 class="category-title">Te presentamos nuestros destacados de la semana</h2>
+
+                <section class="grid-products">
+                    <div class="product">
+                        <img src="assets/img/qc.png" alt="Producto 1"/>
+                        <h2>Neural DSP - Quad Cortex</h2>
+                        <button class="buy-button">Ver más</button>
+                    </div>
+    
+                    <div class="product">
+                        <img src="assets/img/ftm.png" alt="Producto 1" />
+                        <h2>Fender - Tone Master</h2>
+                        <button class="buy-button">Ver más</button>
+                    </div>
+    
+                    <div class="product">
+                        <img src="assets/img/ffm3.png" alt="Producto 1" />
+                        <h2>Fractal - FM3</h2>
+                        <button class="buy-button">Ver más</button>
+                    </div>
+                </section>
+
+
+            </article>
+
+            <article class="opinions">
+                <a name="opiniones"></a>
+                <h2>Lee lo que dicen nuestros clientes</h2>
+
+                <section class="grid-opinions">
+                    <img src="assets/img/op1.png" alt="Producto 1"/>
+                    <img src="assets/img/op2.png" alt="Producto 1"/> 
+                    <img src="assets/img/op3.png" alt="Producto 1"/> 
+                </section>
+
+            </article>
+
+            <article class="text-me">
+                <a name="escribenos"></a>
+                <section id="Contacto" class="container my-5">
+
+                    <h2>Escribenos, te queremos leer!!</h2>
+                    <p class="text-center my-4 d-none d-md-block">
+                        Cualquier duda que tengas, no dudes en escribirnos. Recuerda que traemos el instrumento o equipo que desees, desde cualquier parte del mundo!
+                    </p>
+            
+                    <form>
+                        <div class="form-group mb-4">
+                            <input class="form-control" placeholder="Nombre">
+                        </div>
+            
+                        <div class="form-group mb-4">
+                            <input class="form-control" placeholder="Correo electrónico" />
+                        </div>
+            
+            
+                        <div class="form-group">
+                            <textarea class="form-control" placeholder="Escribe aquí tu mensaje"></textarea>
+                        </div>
+            
+                        <div class="my-3 text-end">
+                            <button class="btn btn-info text-light">Enviar</button>
+                        </div>
+                    </form>
+            
+                </section>
+            </article>
+
+        </section>
+
+        <footer>
+            <a name="siguenos"></a>
+            <section class="social-media">
+                <div>
+                    <iconify-icon icon="ic:baseline-facebook" width="24" height="24"></iconify-icon></iconify-icon>
+                    <iconify-icon icon="mdi:instagram" width="24" height="24"></iconify-icon>
+                </div>
+                <div class="foot-contact">
+                    <iconify-icon icon="material-symbols:mail-outline"></iconify-icon><span>ventas@rms.cl</span>
+                </div>
+                <div class="foot-contact">
+                    <iconify-icon icon="ic:baseline-whatsapp"></iconify-icon><span>+56 9 999 9 9999</span>
+                </div>
+                <p>Todos los derechos reservados</p>
+            </section>
+        </footer>
+    </main>
+</body>
+
+</html>

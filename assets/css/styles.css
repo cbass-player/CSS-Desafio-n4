@@ -1,0 +1,541 @@
+/* 0. Definiciones generales */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100;8..144,200;8..144,300;8..144,400;8..144,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Roboto&family=Shadows+Into+Light&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* 1. Definición de Layout (Grid) */
+navbar {
+    grid-area: navbar;
+    background-color: #E1C340;
+    display: flex;
+    flex-direction: column;
+    justify-content:flex-end;
+    align-items: center;
+    font-family: 'Roboto Flex', sans-serif;
+    color: #0d0d0d;
+    font-size:1em;
+    height: 4em;
+    width: 100%;
+    height: 100%;
+}
+
+asidebar {
+    grid-area: asidebar;
+    background-color:#A4E8E0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    font-family: 'Roboto Flex', sans-serif;
+    font-size: 0.8em;
+    font-weight:100;
+    padding: 1em 1em 0 1em;
+    padding-left: 1em;
+    padding-top: 1em;
+    position: fixed;   /*Fijar elemento*/
+    left: 0;           /*Posición de Fijar elemento*/
+    top:0;             /*Posición de Fijar elemento*/ 
+    height: 100%;       /*Alto relativo del elemento*/
+    width: 12.5%;      /*Ancho relativo del elemento*/
+}
+
+.main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:#ffffff;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #E1C340;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto Flex', sans-serif;
+    color: #0d0d0d;
+    height: 150%;
+    width: 100%;
+}
+
+/*Definición de vista de computador*/
+.grid-layout {
+    display: grid;
+grid-template-areas:
+    "asidebar navbar"
+    "asidebar main"
+    "asibebar footer";
+grid-template-columns: 1fr 7fr;  
+gap: 0px;
+min-height: 100vh;
+}
+
+/* 2. Navbar */
+navbar section {
+    background-color:#E1C340;
+    padding-bottom: 0;
+}
+
+navbar .search-box {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: #fff;
+    border-radius: 10px;
+    background-color:#E1C340;
+    padding: 1.5em 0 1.5em 0; 
+}
+
+navbar h1 {
+    font-family: 'Caveat', cursive;
+    font-size:3em;
+    padding: 0.1em 0 0.1em 0;
+    margin: 0;
+}
+
+/* 3. Contenido de Aside */
+.cat-title {
+    font-size:medium;
+    text-align: center;
+    margin: 0px;
+    padding: 1em 0 2em 0;
+}
+
+.cat-title-mob {
+    display: none;
+}
+
+.enlaces {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+}
+
+.cat-elem {
+    color:rgb(18, 17, 17);
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 0px;
+    padding: 0.7em 0 0.7em 0;
+    text-decoration: none;
+    --clippy: polygon(0 0, 0 0, 0 100%, 0 100%);
+}
+
+.cat-elem::after {
+    content: "";
+    display: block;
+    background-color:#F6C324;
+    width: 90%;
+    margin-top: 5px;
+    height: 5px;
+    clip-path: var(--clippy);
+    transition: clip-path .3s;
+}
+
+.cat-elem:hover {
+    --clippy:polygon(0 0, 100% 0, 100% 100%, 0 100%);
+}
+
+.menu-ham {
+    display: none;
+}
+
+/* 4. Contenido Main */
+
+/* 4.1 Grilla de categorías */
+.categories {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    gap: 5px;
+}
+
+.categories {
+    width: 100%;
+    text-align: center;
+    background-color:#ffffff;
+    padding: 2em 0 2em 0;
+}
+
+.img-cat {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.img-cat img {
+    transition:all .5s ease;
+}
+
+.img-cat:hover img{
+    transform:scale(1.25);
+}
+
+
+.img-cat h2 {
+    font-size: 1rem;
+    font-weight: 700;
+    margin: 0;
+    padding: 1.5em 0.5em 0.5em 0.5em;
+}
+
+/* 4.2 Zona de productos */
+.category-title{
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+    font-size:1.2em;
+    font-weight: 600;
+    padding: 1em 0 0 0;
+    margin: 0;
+}
+
+.grid-products {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2em;
+    padding: 3% 3% 3% 3%;
+}
+
+.product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #ccc;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    border-radius: 3%;
+    box-shadow: 5px 5px 10px #a9a8a8;
+    padding: 1em 0.5em 2em 0.5em;
+}
+
+.product img {
+    max-width: 100%;
+    height: 200px;
+    width: 180px;
+    padding: 0.5em 0.5em;
+}
+
+.product h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    margin: 0;
+    padding: 1em 5em 0.5em 5em;
+}
+
+.product p {
+    font-size: 1rem;
+    margin: 0;
+    padding: 1em 0.5em;
+}
+
+.buy-button {
+    background-color: #513B41;
+    color: #fff;
+    padding: 0.5em 0;
+    border: none;
+    cursor: pointer;
+    font-size: 1em;
+    width: 30%;
+    border-radius: 8%;
+}
+
+.buy-button:hover {
+    background-color: #F6C324;
+}
+
+/* seccion de opiniones */
+.opinions {
+    width: 100%;
+    text-align: center;
+    background-color:#fff;
+}
+
+.grid-opinions {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.opinions img {
+    height: 25%;
+    width: 25%;
+    padding: 1em 2em 2em 2em;
+}
+
+.opinions h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    font-weight: 600;
+    margin: 0;
+}
+
+/* Sección de ingreso de consultas */
+.text-me {
+    width: 50%;
+    background-color: cadetblue;
+}
+
+.text-me h2 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2em;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    padding-bottom: 0.5em;
+}
+
+.text-me p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+}
+
+/* 5. Footer */
+footer {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1em;
+    font-weight: 600;
+}
+
+footer p {
+    margin:0;
+}
+
+footer .social-media {
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+}
+
+.foot-contact span{
+    padding-left: 0.5em;
+}
+
+/*6. Definición de vista mobile*/
+/*6.1 Layout*/
+@media (max-width: 576px) {
+    asidebar {
+        grid-area: asidebar;
+        background-color:#A4E8E0;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'Roboto Flex', sans-serif;
+        font-size: 0.8em;
+        font-weight:100;
+        padding: 1em 1em 1em 1em;
+        position:relative;   /*Fijar elemento*/
+        height: 100%;       /*Alto relativo del elemento*/
+        width: 100%;        /*Ancho relativo del elemento*/
+    }
+
+    navbar {
+        grid-area: navbar;
+        background-color:  #E1C340;
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items: center;
+        font-family: 'Roboto Flex', sans-serif;
+        color: #0d0d0d;
+        font-size:1em;
+        width: 100%;
+        height: 100%;
+        padding: 0;
+    }
+
+    .main {
+        grid-area: main;
+        display: flex;
+        flex-direction: column;
+        background-color:#ffffff;
+    }
+
+    footer {
+        grid-area: footer;
+        background-color: #E1C340;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-family: 'Roboto Flex', sans-serif;
+        color: #0d0d0d;
+        font-size:x-large;
+        height: 150%;
+        width: 100%;
+    }
+
+    .grid-layout {
+        display: grid;
+        grid-template-areas:
+            "asidebar"
+            "navbar"
+            "main"
+            "footer";
+        grid-template-columns: 1fr;  
+        gap: 0px;
+        min-height: 100vh
+        }
+
+    /*6.2 Navbar*/
+    navbar section {
+        background-color:#E1C340;
+        padding-bottom: 0;
+    }
+
+    navbar .search-box {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        background-color: #fff;
+        border-radius: 10px;
+        background-color:#E1C340;
+        padding: 1.5em 0 1.5em 0; 
+    }
+
+    navbar h1 {
+        display: none;
+    }
+
+    navbar h6 {
+        padding: 0.5em 0 0.3em 0;        ;
+    }
+
+    /*6.3 Contenido de Aside*/
+    asidebar .cat-title-mob {
+        display: inline-block;
+        font-size:large;
+        text-align: center;
+        margin: 0px;
+        padding-bottom: 0;
+    }
+
+    asidebar .title-mob {
+        font-family: 'Caveat', cursive;
+        font-size:2em;
+        padding-left: 0.1em;
+        margin: 0;
+    }
+
+    /* 6.4 Menu mobile */
+    asidebar .enlaces {
+        display: none;
+    }
+
+    asidebar .menu-ham {
+        display:block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 2.5em;
+        color: #0d0d0d;
+    }
+
+    .enlaces-mob {
+        display: flex;
+        flex-direction: column;
+        align-items:flex-end;
+        justify-content: start;
+        font-family: 'Roboto Flex', sans-serif;
+        font-size: 0.5em;
+        font-weight:100;
+        background-color: rgba(164, 232, 224, 0.85);
+        position: fixed;
+        top: 8%;
+        left: 50%;
+        width: 50%;
+        clip-path: circle(0% at 90% 10%);
+        transition: clip-path .25s ease-in-out;
+
+    }
+
+    .cat-elem {
+        padding-right: 1em;
+    }
+
+    .menu-label {
+        cursor: pointer;
+    }
+
+    .menu-input:checked + .enlaces-mob {
+        clip-path: circle(130.7% at 90% 5%);;
+    }
+
+    .menu-input {
+        display: none;
+    }
+
+    asidebar .cat-title {
+        display: none;
+    }
+
+    asidebar p {
+        display: none;
+    }
+
+    /* 6.5 Grilla de categorías */
+    .categories {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0px;
+    }
+
+    /*6.6 Contenido Grilla */
+    main .grid-products {
+        display: grid;
+        justify-items: center;
+        grid-template-columns: 1fr;
+        gap: 6em;
+        padding: 3% 2em 7% 2em;
+        width: 100%;
+        }
+    
+    main .product {
+        width: 80%;
+        height: 105%;
+    
+    }
+
+    main .product h2 {
+        font-size: 1rem;
+        margin: 0;
+        padding: 0.5em 0.5em 0.5em 0.5em;
+    }
+
+    /* 6.7 Opiniones */
+    .grid-opinions {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .opinions img {
+        height: 80%;
+        width: 80%;
+        padding: 1em 2em 2em 2em;
+    }
+    /* 6.8 Seccion escríbenos */
+    .text-me {
+        width: 100%;
+        background-color: cadetblue;
+    }
+
+     /* 6.9 Seccion contacto */
+    footer {
+        font-family: 'Roboto', sans-serif;
+        font-size: 0.9em;
+        font-weight: 600;
+    }
+}
